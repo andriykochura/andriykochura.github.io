@@ -1,0 +1,156 @@
+
+/*-------------------  Global  -------------------*/
+
+body {
+	background-color: white;
+	font-family: 'Exo 2', sans-serif;
+	color: #444444;
+	min-width: 800px;
+	min-height: 100%;
+	overflow: hidden;
+}
+
+h2 {
+	font-weight: 100;
+	font-size: 38px;
+	margin-top: 5%;
+	position: relative;
+	z-index: 1001;
+	opacity: 0;
+}
+
+canvas {
+	padding: 0;
+	margin: auto;
+	display: block;
+	margin-top: 20px;
+	z-index: 1;
+	/*outline: 1px solid black;*/
+}
+
+/*--------------------  Nav  ---------------------*/
+
+.pagenav {
+	position: fixed;
+	top: -100px;
+	height: 100px;
+	margin: 0 auto;
+	text-align: center;
+	background-color: black; 
+	width: 100%;
+	z-index: 10000;
+}
+
+.pagenav > a {
+	font-weight: 300;
+	font-size: 15px;
+	margin: 16px 20px;
+	display: inline-block;
+	color: #777777;
+	border: none;
+	text-decoration: none;
+}
+
+.pagenav > a:hover {
+	color: #777777;
+	cursor: no-drop;
+}
+
+.pagenav > a.linked {
+	border-bottom: 1px solid #777777;
+	cursor: pointer;
+	color: #999999;
+	-moz-transition: all .5s linear;
+	-webkit-transition: all .5s linear;
+	-ms-transition: all .5s linear;
+	-o-transition: all .5s linear;
+	transition: all .5s linear;
+}
+
+.pagenav .linked:hover {
+	border-bottom: 1px solid black;
+	color: white;
+}
+
+
+
+/*-------------------  Slides  -------------------*/
+
+.slide {
+	line-height: 1;
+	text-align: center;
+	position: absolute;
+	top: 60px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	overflow: scroll;
+	background-color: white;
+	/*outline: 1px solid red;*/
+	-webkit-transition: all 1s ease;
+	-moz-transition: all 1s ease;
+	-ms-transition: all 1s ease;
+	-o-transition: all 1s ease;
+	transition: all 1s ease;
+}
+
+
+
+/*----------------  First slide  -----------------*/
+
+
+.hello {
+	background-image: url("../img/hello_1.svg");
+	width: 900px;
+	height: 380px;
+	margin: auto;
+	background-size: 900px 450px;
+	position: relative;
+	margin-top: -60px;
+	z-index: 1000;
+	opacity: 0.1;
+}
+
+.ani {
+	z-index: 999;
+	position: relative;
+	opacity: 0.01;
+	/*width: 900px;*/
+	margin: 0 auto;
+	margin-top: -300px;
+}
+
+h3 {
+	font-size: 17px;
+	font-weight: 300;
+	margin: 50px 0 20px 0;
+	width: 500px;
+	/*height: 120px;*/
+	line-height: 26px;
+	display: inline-block;
+	z-index: 10001;
+}
+
+/*------------------------------------------------*/
+/*---------------------  MQ  ---------------------*/
+
+@media (max-height: 650px) {
+	h2 {
+		margin-top: 3%;
+	}
+}
+
+@media (max-width: 950px) {
+	h2 {
+		margin-top: 3%;
+	}
+
+	.hello {
+		width: 100%;
+		height: 280px;
+		background-size: 100% auto;
+		background-repeat: no-repeat;
+		background-position: center;
+		margin-top: -20px;
+	}
+}
