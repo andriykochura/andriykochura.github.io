@@ -8,6 +8,7 @@ body {
 	min-width: 800px;
 	min-height: 100%;
 	overflow: hidden;
+	margin: 0;
 }
 
 h2 {
