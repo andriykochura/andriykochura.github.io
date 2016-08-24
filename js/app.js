@@ -17,8 +17,8 @@ define([
       });
 
     $('.hello')
-      .on('mouseenter', function() { myParticles.hiding(true); })
-      .on('mouseleave', function() { myParticles.hiding(false); });
+      .on('mouseenter', function() { myParticles.growing(true); })
+      .on('mouseleave', function() { myParticles.growing(false); });
 
     myParticles
       .animate();

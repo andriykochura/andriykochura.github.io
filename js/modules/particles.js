@@ -50,10 +50,17 @@ define([
     });
   };
 
+  var growBig = function() {
+    data.forEach(function(d) { 
+      d.yvel *= 0.9; 
+      d.xvel *= 0.9;
+    });
+  }
+
   // public
 
   var repaintHandler,
-      hideHandler,
+      growHandler,
       running = false;
 
   return {
@@ -68,19 +75,12 @@ define([
       clearInterval(repaintHandler);
       running = false;
     },
-    hiding: function(reasoned) {
-      if (reasoned)
-        hideHandler = setInterval(function() {
-          data.forEach(function(d) { 
-            d.yvel *= 0.9; 
-            d.xvel *= 0.9;
-            growth = true;
-          });
-        }, 50);
-      else {
-        clearInterval(hideHandler);
-        growth = false;
-      }
+    growing: function(reasoned) {
+      growth = reasoned;
+      if (growth)
+        growHandler = setInterval(growBig, 50);
+      else
+        clearInterval(growHandler);
     }
   }
 });
